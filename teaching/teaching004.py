@@ -5,7 +5,8 @@ def draw_star():
     star = turtle.Turtle()
 
     # 画一个五角星
-    for i in range(5):
+    for i in range(0,5):
+        print("第{}次".format(i))
         star.forward(100) # 前进 100 步
         star.right(144)   # 右转 144 度
 

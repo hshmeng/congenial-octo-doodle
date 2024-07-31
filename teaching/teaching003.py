@@ -19,5 +19,8 @@ anniu = tkinter.Button(hshmeng,text="记录",command=hastime)
 anniu.grid(row=0,column=1)
 liebiao = tkinter.Listbox(hshmeng,width=50)
 liebiao.grid(row=2,column=0,columnspan=2,padx=20,pady=10)
+#添加关闭按钮
+guanbi = tkinter.Button(hshmeng,text="关闭",command=hshmeng.quit)
+guanbi.grid(row=3,column=0,columnspan=2)
 
 hshmeng.mainloop()#消息循环，保持界面显示
