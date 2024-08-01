@@ -10,7 +10,11 @@ def selection_sort(arr):
         arr[i], arr[min_index] = arr[min_index], arr[i]
     return arr
 
-arr = [random.randint(1, 100) for _ in range(10)]
+# Ask the user for the number of elements in the array
+n = int(input("请输入数组的元素个数: "))
+
+# Generate an array of n random integers between 1 and 100
+arr = [random.randint(1, 100) for _ in range(n)]
 
 print("Original array is", arr)
 print("Sorted array is", selection_sort(arr))
