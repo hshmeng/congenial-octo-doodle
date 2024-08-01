@@ -1,18 +1,21 @@
-def bubble_sort(arr):
-    n = len(arr)
+import random
 
-    # 遍历所有数组元素
-    for i in range(n-1):
-        # 最后 i 个元素已经到位
-        for j in range(0, n-i-1):
+def selection_sort(arr):
+    # Traverse through all array elements
+    for i in range(len(arr)):
+        # Find the minimum element in remaining unsorted array
+        min_index = i
+        for j in range(i + 1, len(arr)):
+            if arr[min_index] > arr[j]:
+                min_index = j
 
-            # 遍历数组从 0 到 n-i-1
-            # 如果发现当前元素比下一个元素大
-            # 则交换两个元素
-            if arr[j] > arr[j+1] :
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+        # Swap the found minimum element with the first element of the unsorted part
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
 
-# 测试函数
-arr = [64, 34, 25, 12, 22, 11, 90]
-bubble_sort(arr)
-print ("排序后的数组是：")
+# Generate a list of 10 random numbers between 1 and 100
+arr = [random.randint(1, 100) for _ in range(10)]
+
+print("Original array is", arr)
+print("Sorted array is", selection_sort(arr))
+
